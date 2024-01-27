@@ -18,6 +18,7 @@ This application allows users to perform face recognition and capture photos. It
 - Python 3.x
 - OpenCV
 - Tkinter
+- shape_predictor_68_face_landmarks.dat (this file should be in the same directory as other .py files)
 
 ## Getting Started
 
