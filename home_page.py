@@ -83,5 +83,3 @@ def show_signup_form(root):
     root.destroy()
     ImageCaptureApp()
 
-
-# main_page()
