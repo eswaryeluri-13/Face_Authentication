@@ -1,0 +1,6 @@
+pip instal numpy
+pip install cmake
+pip install "C:\Users\dlib-19.22.99-cp39-cp39-win_amd64.whl"(only for python_version<=3.9)
+			---->location of the dlib file
+pip install face_recognization
+
