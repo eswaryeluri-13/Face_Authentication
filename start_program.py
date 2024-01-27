@@ -17,3 +17,4 @@ def create_table_if_not_exists():
         conn.commit()
         conn.close()
 create_table_if_not_exists()
+home_page.main_page()

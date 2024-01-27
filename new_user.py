@@ -248,5 +248,6 @@ class ImageCaptureApp:
             self.ALL_USERS = [row[0] for row in result]
             print(self.ALL_USERS)
         return username in self.ALL_USERS
+    
 # if __name__ == "__main__":
 #     ImageCaptureApp()
