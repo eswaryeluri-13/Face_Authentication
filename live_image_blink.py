@@ -9,7 +9,7 @@ import home_page
 
 first_blink=False
 face_present=False
-
+MAX_tries = 3
 class BlinkDetectionApp:
     def __init__(self, master,username):
         self.username = username
@@ -37,7 +37,7 @@ class BlinkDetectionApp:
         self.btn_capture = tk.Button(self.master, text="Capture", command=self.capture, state=tk.DISABLED)
         self.btn_capture.pack(side=tk.RIGHT, padx=35, pady=10)
 
-        self.btn_quit = tk.Button(self.master, text="Back", command=lambda : self.back_to_login(self.master))
+        self.btn_quit = tk.Button(self.master, text="Back", command=lambda : self.back_to_login())
         self.btn_quit.pack(side=tk.LEFT, padx=35, pady=10)
 
         self.EYE_AR_THRESH = 11
@@ -51,6 +51,12 @@ class BlinkDetectionApp:
 
         self.start_blink_detection()
     def back_to_login(self):
+        global first_blink,face_present,MAX_tries
+        self.capture_enabled = False
+        self.btn_capture.config(state=tk.DISABLED)
+        first_blink=False
+        face_present=False
+        MAX_tries = 3
         self.on_closing()
         home_page.create_username_entry_window()
 
@@ -179,14 +185,32 @@ class BlinkDetectionApp:
             self.show_retry_window()
 
     def show_retry_window(self):
-        global face_present
+
+        global face_present,MAX_tries,first_blink
         print(face_present)
         if self.retry_window is None and face_present:
-            response = messagebox.askokcancel("Warning", "No blink detected from the user\n click ok to retry")
-            if response:
-                self.retry_video()
+            MAX_tries-=1
+            if MAX_tries>0:
+                txt = "No blink detected from the user\n remaining atempts " +str(MAX_tries)+ "\nclick ok to retry"
+                response = messagebox.askokcancel("Warning",txt)
+                if response:
+                    self.retry_video()
+                else:
+                    self.capture_enabled = False
+                    self.btn_capture.config(state=tk.DISABLED)
+                    first_blink=False
+                    face_present=False
+                    MAX_tries = 3
+                    self.back_to_login()
             else:
+                messagebox.showerror('Warning', 'Max tries exceeded! Logging out')
+                first_blink=False
+                face_present=False
+                MAX_tries = 3
+                self.btn_capture.config(state=tk.DISABLED)
+                self.capture_enabled = False
                 self.back_to_login()
+
 
 
 
