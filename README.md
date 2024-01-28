@@ -12,6 +12,8 @@ This application allows users to perform face recognition and capture photos. It
 - **Face Recognition:** Detects faces using OpenCV and provides blink detection.
 - **Capture Photos:** Capture and save user photos upon face detection.
 - **SQLite Database:** Stores user data in an SQLite database.
+- **Spoof Free:** Avoids Spoofing
+- **Maximum retries:** Maximum 3 retries are allowed while login.
 
 ## Prerequisites
 
