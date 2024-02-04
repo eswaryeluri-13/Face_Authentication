@@ -7,37 +7,14 @@ import live_image_blink
 folder_path = r"C:\Users\eswar\Desktop\face_recog_final\data_base_images"
 
 def recognize_face(test_encoding,username):
-    global folder_path
-    # conn = sqlite3.connect('your_database.db')
-    # cursor = conn.cursor()
-
-    # cursor.execute('SELECT Username FROM Usernames')
-    # result = cursor.fetchall()
-            
-    # conn.close()
-    
+    global folder_path    
     persons = {}
     st = username + '.jpg'
     x1 = [os.path.join(folder_path, st)]
     persons[username] = x1
-    # for i in [row[0] for row in result]:
-    #     x = []
-    #     st = i + '.jpg'
-    #     x1 = os.path.join(folder_path, st)
-    #     print(x1)
-    #     x.append(x1)
-    #     persons[i] = x
+
     print(persons)
         
-    # persons = {
-    #     "Dhanush": [image_path1],
-    #     "Neehar": [image_path2, image_path3],
-    #     "Eswar": [image_path4],
-    #     "Abhi": [image_path5, image_path6],
-    #     "Sriya": [image_path7, image_path8],
-    #     # "Eswar": [image_path4, "eswar3.jpeg", "eswar3.jpeg"]
-    # }
-
     # Load the known images and encodings
     known_encodings = []
     known_names = []
