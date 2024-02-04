@@ -3,14 +3,7 @@ import os,sys
 import tkinter as tk
 from tkinter import messagebox
 import live_image_blink
-# image_path1 = r"C:\Users\DHANUSH\Desktop\face_recg\images\dhanush1.jpeg"
-# image_path2 = r"C:\Users\DHANUSH\Desktop\face_recg\images\neehar1.jpeg"
-# image_path3 = r"C:\Users\DHANUSH\Desktop\face_recg\images\neehar2.jpeg"
-# image_path4 = r"C:\Users\DHANUSH\Desktop\face_recg\images\eswar1.jpeg"
-# image_path5 = r"C:\Users\DHANUSH\Desktop\face_recg\images\abhigna1.jpeg"
-# image_path6 = r"C:\Users\DHANUSH\Desktop\face_recg\images\abhigna2.jpeg"
-# image_path7 = r"C:\Users\DHANUSH\Desktop\face_recg\images\sriya1.jpeg"
-# image_path8 = r"C:\Users\DHANUSH\Desktop\face_recg\images\sriya2.jpeg"
+
 folder_path = r"C:\Users\eswar\Desktop\face_recog_final\data_base_images"
 
 def recognize_face(test_encoding,username):
