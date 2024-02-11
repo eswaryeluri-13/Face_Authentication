@@ -22,9 +22,4 @@ This application allows users to perform face recognition and capture photos. It
 - Tkinter
 - shape_predictor_68_face_landmarks.dat (this file should be in the same directory as other .py files)
 
-## Getting Started
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/facerecognition-app.git
